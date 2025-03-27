@@ -1,115 +1,64 @@
-# Cloud Native Calculator Microservice Development
+Calculator Microservice Using Node.js & Express
+Overview
+This project involves developing a RESTful API microservice capable of executing fundamental mathematical operations, including addition, subtraction, multiplication, and division. It is built using Node.js and Express.js and employs Winston for logging purposes.
+Project Setup
+1.	Create the Project Directory – Begin by setting up a new folder for the project.
+2.	Initialize Node.js – Run npm init -y to generate a package.json file.
+3.	Install Express – Install the Express.js framework using npm install express.
+ 
+Importing Dependencies
+The project requires certain modules, including Express for handling HTTP requests and Winston for logging.
+ 
+Configuring Winston Logger
+•	Logs all incoming requests and errors.
+•	Implements middleware to log requests before processing them.
+ 
+Input Validation
+•	Ensures that the inputs provided to the API are valid numbers.
+•	Prevents errors by checking for missing or incorrect data.
+ 
+API Implementation
+•	Validates user inputs before performing operations.
+•	Logs both successful transactions and errors.
 
-## Project Overview
-This practical exercise focuses on creating a lightweight microservice for arithmetic calculations using modern web development technologies. The goal is to build a flexible, robust calculator API that supports basic mathematical operations with comprehensive error handling and logging.
+ 
+Handling Errors (Division by Zero)
+•	If division by zero occurs, an error is logged appropriately to prevent system crashes.
+ 
+Logging System
+•	Stores combined logs for all requests.
+•	logs/error.log is dedicated to tracking errors.
+ 
+Monitoring Logs in Real-Time
+To observe logs as they are recorded, use the command:
+Get-Content logs/combined.log -Wait
+Setting Up Git and Pushing to GitHub
+1.	Initialize Git with git init.
+2.	Add files to the repository: git add ..
+3.	Commit the changes: git commit -m "Initial commit".
+4.	Link to a GitHub repository using: https://github.com/himanshudhaka17/SIT737-P1.4/tree/main
+5.	Push the code to GitHub: git branch -M main  
+git push -u origin main  
 
-## Project Requirements
-Our microservice will deliver the following core functionalities:
-- Perform arithmetic operations via RESTful endpoints
-- Implement robust input validation
-- Provide clear error messaging
-- Log application events and transactions
+Starting the Server
+Launch the application using:
+node server.js
+GitHub Repository: https://github.com/himanshudhaka17/SIT737-P1.4/tree/main
+vailable API Endpoints
+The following endpoints can be accessed for mathematical operations:
+•	Addition: http://localhost:3000/add?num1=100&num2=20
+ 
+•	Subtraction: http://localhost:3000/subtract?num1=100&num2=20
+ 
+•	Multiplication: http://localhost:3000/multiply?num1=-10&num2=-20
+ 
+•	Division: http://localhost:3000/divide?num1=-10&num2=-20
+ 
 
-## Development Workflow
 
-### Environment Setup
-Before beginning, ensure you have the following tools installed:
-- **Node.js**: Runtime environment for JavaScript
-- **Visual Studio Code**: Recommended integrated development environment
-- **Git**: Version control system
+Conclusion:
+This project creates a RESTful API using Node.js and Express.js to perform basic math operations. It includes input validation, error handling, and logging with Winston. The system is version-controlled with Git and hosted on GitHub, providing a solid foundation for building scalable microservices.
 
-### Project Initialization
-1. Create a new project directory
-2. Initialize Node.js project
-3. Install necessary dependencies (Express framework)
 
-### API Design Considerations
-We'll design four primary endpoints for mathematical operations:
-- Addition
-- Subtraction
-- Multiplication
-- Division
 
-Each endpoint will:
-- Accept two numerical parameters
-- Validate input
-- Return computational results
-- Handle potential error scenarios
-
-### Implementation Strategy
-
-#### Core Functionality
-The microservice will:
-- Parse query parameters
-- Perform type conversion
-- Execute arithmetic operations
-- Return JSON-formatted responses
-
-#### Error Handling Mechanisms
-- Validate numerical inputs
-- Prevent division by zero
-- Generate meaningful error messages
-- Provide appropriate HTTP status codes
-
-### Logging Integration
-Implement comprehensive logging using Winston to:
-- Record transaction details
-- Track application events
-- Facilitate debugging and monitoring
-- Generate persistent log files
-
-### Development Steps
-1. Create project structure
-2. Implement server logic
-3. Configure routing
-4. Add input validation
-5. Integrate logging
-6. Test endpoints
-
-## Technical Implementation Highlights
-
-### Endpoint Structure
-```javascript
-app.get('/operation', (req, res) => {
-    // Input parsing
-    // Validation
-    // Computation
-    // Logging
-    // Response generation
-});
-```
-
-### Logging Configuration
-```javascript
-const logger = winston.createLogger({
-    level: 'info',
-    transports: [
-        new winston.transports.Console(),
-        new winston.transports.File({ filename: 'logs/app.log' })
-    ]
-});
-```
-
-## Deployment and Submission
-
-### Version Control
-- Initialize Git repository
-- Commit code changes
-- Push to GitHub
-
-### Submission Requirements
-- Functional microservice
-- Comprehensive README
-- Well-documented code
-- Operational logging mechanism
-
-## Learning Outcomes
-By completing this project, you will:
-- Understand microservice architecture
-- Learn RESTful API design
-- Practice Node.js development
-- Implement error handling
-- Utilize logging frameworks
-
-## Conclusion
-This practical exercise provides a foundational approach to developing a cloud-native microservice, emphasizing modularity, error resilience, and observability.
+![image](https://github.com/user-attachments/assets/b5e32ccb-2984-403a-b9d5-a49ee5451f82)
